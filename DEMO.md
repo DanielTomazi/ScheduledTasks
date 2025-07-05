@@ -124,5 +124,3 @@ Funcionalidades planejadas:
 - [ ] Widgets de desktop
 
 ---
-
-**Aproveite o TaskSync para organizar suas tarefas de forma elegante e eficiente!**

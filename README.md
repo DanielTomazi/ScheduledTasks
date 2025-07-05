@@ -1,6 +1,6 @@
 # TaskSync - Agendador de Tarefas Elegante
 
-Um agendador de tarefas moderno, responsivo e elegante construído com HTML5, CSS3 e JavaScript vanilla, seguindo os princípios de Clean Code e arquitetura bem estruturada.
+Um agendador de tarefas moderno, responsivo e elegante construído com HTML5, CSS3 e JavaScript, seguindo os princípios de Clean Code e arquitetura bem estruturada.
 
 ## ✨ Características
 
@@ -212,13 +212,7 @@ Contribuições são bem-vindas! Por favor:
 
 Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
 
-## 🙏 Agradecimentos
-
 - **Inter Font**: Google Fonts
 - **Font Awesome**: Ícones
 - **CSS Grid/Flexbox**: Layout responsivo
 - **Web APIs**: localStorage, Date, etc.
-
----
-
-**Desenvolvido com ❤️ seguindo os princípios de Clean Code e boas práticas de desenvolvimento front-end.**
