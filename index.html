@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskSync - Agendador de Tarefas</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="header-content">
+                <h1 class="app-title">
+                    <i class="fas fa-calendar-check"></i>
+                    TaskSync
+                </h1>
+                <div class="header-actions">
+                    <button class="btn-icon" id="darkModeToggle" title="Alternar tema">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="btn-primary" id="addTaskBtn">
+                        <i class="fas fa-plus"></i>
+                        Nova Tarefa
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <h3>Filtros</h3>
+                    <div class="filter-options">
+                        <button class="filter-btn active" data-filter="all">
+                            <i class="fas fa-list"></i>
+                            Todas as Tarefas
+                            <span class="count" id="allCount">0</span>
+                        </button>
+                        <button class="filter-btn" data-filter="pending">
+                            <i class="fas fa-clock"></i>
+                            Pendentes
+                            <span class="count" id="pendingCount">0</span>
+                        </button>
+                        <button class="filter-btn" data-filter="completed">
+                            <i class="fas fa-check-circle"></i>
+                            Concluídas
+                            <span class="count" id="completedCount">0</span>
+                        </button>
+                        <button class="filter-btn" data-filter="overdue">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            Atrasadas
+                            <span class="count" id="overdueCount">0</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>Prioridades</h3>
+                    <div class="priority-filters">
+                        <button class="priority-filter" data-priority="high">
+                            <span class="priority-indicator high"></span>
+                            Alta
+                        </button>
+                        <button class="priority-filter" data-priority="medium">
+                            <span class="priority-indicator medium"></span>
+                            Média
+                        </button>
+                        <button class="priority-filter" data-priority="low">
+                            <span class="priority-indicator low"></span>
+                            Baixa
+                        </button>
+                    </div>
+                </div>
+            </aside>
+
+            <section class="task-content">
+                <div class="content-header">
+                    <div class="search-container">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="Buscar tarefas..." class="search-input">
+                    </div>
+                    <div class="sort-container">
+                        <select id="sortSelect" class="sort-select">
+                            <option value="dueDate">Ordenar por prazo</option>
+                            <option value="priority">Ordenar por prioridade</option>
+                            <option value="created">Ordenar por criação</option>
+                            <option value="title">Ordenar por título</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="task-list-container">
+                    <div id="taskList" class="task-list">
+                    </div>
+                    
+                    <div id="emptyState" class="empty-state">
+                        <i class="fas fa-clipboard-list"></i>
+                        <h3>Nenhuma tarefa encontrada</h3>
+                        <p>Comece criando sua primeira tarefa!</p>
+                        <button class="btn-primary" onclick="document.getElementById('addTaskBtn').click()">
+                            <i class="fas fa-plus"></i>
+                            Criar Tarefa
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="taskModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Nova Tarefa</h2>
+                <button class="btn-close" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <form id="taskForm" class="modal-body">
+                <div class="form-group">
+                    <label for="taskTitle">Título *</label>
+                    <input type="text" id="taskTitle" required placeholder="Digite o título da tarefa">
+                </div>
+
+                <div class="form-group">
+                    <label for="taskDescription">Descrição</label>
+                    <textarea id="taskDescription" placeholder="Descreva os detalhes da tarefa"></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="taskDueDate">Prazo</label>
+                        <input type="datetime-local" id="taskDueDate">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="taskPriority">Prioridade</label>
+                        <select id="taskPriority">
+                            <option value="low">Baixa</option>
+                            <option value="medium" selected>Média</option>
+                            <option value="high">Alta</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="taskCategory">Categoria</label>
+                    <select id="taskCategory">
+                        <option value="work">Trabalho</option>
+                        <option value="personal">Pessoal</option>
+                        <option value="study">Estudos</option>
+                        <option value="health">Saúde</option>
+                        <option value="other">Outros</option>
+                    </select>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn-secondary" id="cancelBtn">Cancelar</button>
+                    <button type="submit" class="btn-primary" id="saveBtn">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="confirmModal" class="modal">
+        <div class="modal-content small">
+            <div class="modal-header">
+                <h3 id="confirmTitle">Confirmar Ação</h3>
+            </div>
+            <div class="modal-body">
+                <p id="confirmMessage">Tem certeza que deseja realizar esta ação?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-secondary" id="confirmCancel">Cancelar</button>
+                <button type="button" class="btn-danger" id="confirmOk">Confirmar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/task-manager.js"></script>
+    <script src="js/ui-manager.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
