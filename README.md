@@ -2,9 +2,9 @@
 
 Um agendador de tarefas moderno, responsivo e elegante construído com HTML5, CSS3 e JavaScript, seguindo os princípios de Clean Code e arquitetura bem estruturada.
 
-## ✨ Características
+## Características
 
-### 🎯 Funcionalidades Principais
+### Funcionalidades Principais
 - **Criação e Edição de Tarefas**: Interface intuitiva para criar, editar e gerenciar tarefas
 - **Sistema de Prioridades**: Organize tarefas por prioridade (Alta, Média, Baixa)
 - **Categorização**: Classifique tarefas por categorias (Trabalho, Pessoal, Estudos, Saúde, Outros)
@@ -13,26 +13,26 @@ Um agendador de tarefas moderno, responsivo e elegante construído com HTML5, CS
 - **Busca Avançada**: Encontre tarefas rapidamente por título ou descrição
 - **Ordenação Flexível**: Ordene por prazo, prioridade, data de criação ou título
 
-### 🎨 Interface e Experiência
+### Interface e Experiência
 - **Design Moderno**: Interface elegante com gradientes e animações suaves
 - **Modo Escuro/Claro**: Alternância automática entre temas
 - **Responsivo**: Funciona perfeitamente em desktop, tablet e mobile
 - **Animações Fluidas**: Transições suaves e feedback visual
 - **Acessibilidade**: Suporte a navegação por teclado e leitores de tela
 
-### 💾 Persistência e Dados
+### Persistência e Dados
 - **Armazenamento Local**: Todos os dados salvos no navegador
 - **Exportação/Importação**: Backup e restauração em formato JSON
 - **Sincronização**: Dados mantidos entre sessões
 
-### ⌨️ Atalhos do Teclado
+### Atalhos do Teclado
 - `Ctrl/Cmd + N`: Nova tarefa
 - `Ctrl/Cmd + F`: Focar na busca
 - `Ctrl/Cmd + D`: Alternar modo escuro
 - `Ctrl/Cmd + E`: Exportar tarefas
 - `Esc`: Fechar modais
 
-## 🏗️ Arquitetura e Tecnologias
+## Arquitetura e Tecnologias
 
 ### Estrutura do Projeto
 ```
@@ -103,7 +103,7 @@ Coleção de utilitários organizados por categoria:
 - `ValidationUtils`: Validações
 - `NotificationUtils`: Sistema de notificações
 
-## 🚀 Como Usar
+## Como Usar
 
 ### Instalação
 1. Clone ou baixe o repositório
@@ -122,7 +122,7 @@ Coleção de utilitários organizados por categoria:
 - **Importar Dados**: Arraste um arquivo JSON válido para restaurar tarefas
 - **Atalhos**: Use atalhos de teclado para maior produtividade
 
-## 🛠️ Desenvolvimento
+## Desenvolvimento
 
 ### Estrutura de Código
 O projeto segue uma arquitetura modular com responsabilidades bem definidas:
@@ -149,7 +149,7 @@ O código foi projetado para ser facilmente extensível:
 - Integrar com APIs externas
 - Adicionar notificações push
 
-## 🎨 Design System
+## Design System
 
 ### Cores
 - **Primária**: Gradiente azul/roxo (#667eea → #764ba2)
@@ -166,7 +166,7 @@ O código foi projetado para ser facilmente extensível:
 - Sistema baseado em múltiplos de 0.25rem
 - Consistência visual em toda a aplicação
 
-## 📱 Compatibilidade
+## Compatibilidade
 
 ### Navegadores Suportados
 - ✅ Chrome 60+
@@ -200,7 +200,7 @@ Para adicionar novas funcionalidades:
 3. Siga as convenções de nomenclatura
 4. Adicione testes apropriados
 
-## 🤝 Contribuição
+## Contribuição
 
 Contribuições são bem-vindas! Por favor:
 1. Fork o projeto
@@ -208,7 +208,7 @@ Contribuições são bem-vindas! Por favor:
 3. Faça commits descritivos
 4. Abra um Pull Request
 
-## 📄 Licença
+## Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
 
